@@ -1,0 +1,36 @@
+<%- include("header") -%>
+   <div class="box" id="heading">
+    <h1>
+      <%=today%>
+    </h1>
+  </div>
+
+  <div class="box">
+<% item.forEach((field)=>{ %>
+
+  <form action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkedBox" value="<%=field._id%>" onchange="this.form.submit()">
+      <p><%= field.todoItem %></p>
+    </div>
+    <input type="hidden" name="pageTitle" value="<%=today%>"></input>
+  </form>
+<% }) %>
+
+<!--
+<div class="item">
+<input type="checkbox">
+<p> item[i] %></p>
+</div>
+   for (var i=0; i < item.length; i++){ %>
+
+     } %>
+-->
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="new item" autocomplete="off">
+      <button type="submit" name="listDiff" value="<%=today%>">+</button>
+      
+    </form>
+  </div>
+
+<%-include("footer") -%>
